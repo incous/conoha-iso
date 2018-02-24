@@ -92,9 +92,9 @@ func NewApi(service string, region string) (api *Api, err error) {
 func (api *Api) Endpoint(path []string) (*url.URL, error) {
 	var strurl string
 	if api.TenantId == "" {
-		strurl = fmt.Sprintf("https://%s.%s.conoha.io/%s/%s", api.Service.Name, api.Region.Name, api.Service.Version, strings.Join(path, "/"))
+		strurl = fmt.Sprintf("https://%s.%s.cloud.z.com/%s/%s", api.Service.Name, api.Region.Name, api.Service.Version, strings.Join(path, "/"))
 	} else {
-		strurl = fmt.Sprintf("https://%s.%s.conoha.io/%s/%s/%s", api.Service.Name, api.Region.Name, api.Service.Version, api.TenantId, strings.Join(path, "/"))
+		strurl = fmt.Sprintf("https://%s.%s.cloud.z.com/%s/%s/%s", api.Service.Name, api.Region.Name, api.Service.Version, api.TenantId, strings.Join(path, "/"))
 	}
 
 	if strings.HasSuffix(strurl, "/") {

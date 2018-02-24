@@ -75,7 +75,7 @@ func TestApiEndpoint(t *testing.T) {
 	for _, r := range []string{TYO1, TYO2, SIN1, SJC1} {
 		api, _ := NewApi("identity", r)
 		url, _ = api.Endpoint([]string{"tokens"})
-		expect := fmt.Sprintf("https://identity.%s.conoha.io/v2.0/tokens", r)
+		expect := fmt.Sprintf("https://identity.%s.cloud.z.com/v2.0/tokens", r)
 		if url.String() != expect {
 			t.Errorf("Endpoint url is not correct. [%s]", url.String())
 		}
@@ -84,7 +84,7 @@ func TestApiEndpoint(t *testing.T) {
 	for _, r := range []string{TYO1, TYO2, SIN1, SJC1} {
 		api, _ := NewApi("compute", r)
 		url, _ = api.Endpoint([]string{"iso-images"})
-		expect := fmt.Sprintf("https://compute.%s.conoha.io/v2/iso-images", r)
+		expect := fmt.Sprintf("https://compute.%s.cloud.z.com/v2/iso-images", r)
 		if url.String() != expect {
 			t.Errorf("Endpoint url is not correct. [%s]", url.String())
 		}
